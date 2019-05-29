@@ -1,0 +1,140 @@
+from selenium import webdriver
+import time
+import random
+from selenium.webdriver import ActionChains
+driver = webdriver.Chrome()
+driver.get("https://www.wjx.cn/jq/40130557.aspx")
+driver.maximize_window()
+
+
+"""
+网页元素设置为了隐藏，selenium获取不到，这时候采用的是JS语句执行来帮助我们
+js = 'document.getElementsByName("q1_0")[' + '0' + '].click()'
+driver.execute_script(js)
+getElementsByName得到的是一个列表，通过列表来定位，此次适用于多个单选框题型
+!!!!!好像用Xpath也可以定位！！
+"""
+# q1
+# for i in range(10):
+#     randomId = str(random.randint(0, 2))
+#     ques_num = "q1_%s" % str(i)
+#     # print(ques_num)
+#     js = 'document.getElementsByName(' + ques_num + ')+[' + randomId + '].click()'
+#     time.sleep(1)
+#     driver.execute_script(js)
+
+randomId1_0 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_0")[' + randomId1_0 + '].click()'
+driver.execute_script(js)
+
+randomId1_1 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_1")[' + randomId1_1 + '].click()'
+driver.execute_script(js)
+
+randomId1_2 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_2")[' + randomId1_2 + '].click()'
+driver.execute_script(js)
+
+randomId1_3 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_3")[' + randomId1_3 + '].click()'
+driver.execute_script(js)
+
+randomId1_4 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_4")[' + randomId1_4 + '].click()'
+driver.execute_script(js)
+
+randomId1_5 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_5")[' + randomId1_5 + '].click()'
+driver.execute_script(js)
+
+randomId1_6 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_6")[' + randomId1_6 + '].click()'
+driver.execute_script(js)
+
+randomId1_7 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_7")[' + randomId1_7 + '].click()'
+driver.execute_script(js)
+
+randomId1_8 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_8")[' + randomId1_8 + '].click()'
+driver.execute_script(js)
+
+randomId1_9 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_9")[' + randomId1_9 + '].click()'
+driver.execute_script(js)
+
+randomId1_10 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_10")[' + randomId1_10 + '].click()'
+driver.execute_script(js)
+
+randomId1_11 = str(random.randint(0, 2))
+js = 'document.getElementsByName("q1_11")[' + randomId1_11 + '].click()'
+driver.execute_script(js)
+
+# randomId1_12 = str(random.randint(0, 2))
+# js = 'document.getElementsByName("q1_12")[' + randomId1_12 + '].click()'
+# driver.execute_script(js)
+
+# q2
+# js = 'document.getElementById("q2_1").click()'
+# driver.execute_script(js)
+#
+# js = "document.getElementById('q2_2').style.display='block';"
+# driver.execute_script(js)
+# time.sleep(3)
+el = driver.find_element_by_xpath('//*[@id="divquestion2"]/ul/li[1]/a')
+# ActionChains(driver).move_to_element(el).click().perform()
+el.click()
+
+# q3
+# js = 'document.getElementById("q3_2").click()'
+# driver.execute_script(js)
+
+el = driver.find_element_by_xpath('//*[@id="divquestion3"]/ul/li[1]/a')
+el.click()
+
+
+# q4
+js = 'document.getElementById("q4_1").click()'
+driver.execute_script(js)
+
+# q5
+js = 'document.getElementById("q5_1").click()'
+driver.execute_script(js)
+
+# q6
+js = 'document.getElementById("q6_1").click()'
+driver.execute_script(js)
+
+# q7
+js = 'document.getElementById("q7_1").click()'
+driver.execute_script(js)
+
+# q8
+js = 'document.getElementById("q8_1").click()'
+driver.execute_script(js)
+
+# q9
+js = 'document.getElementById("q9_1").click()'
+driver.execute_script(js)
+
+# q10
+js = 'document.getElementById("q10_1").click()'
+driver.execute_script(js)
+
+# q11
+js = 'document.getElementById("q11_1").click()'
+driver.execute_script(js)
+
+# q12
+js = 'document.getElementById("q12_1").click()'
+driver.execute_script(js)
+
+
+
+# 提交
+# el = driver.find_element_by_id("submit_button")
+# el.click()
+
+
+# el.click()
